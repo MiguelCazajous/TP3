@@ -13,14 +13,14 @@ gdt_start:
         dw 0xffff       ; Segment limiter Bits 15-0 (Size of GDT in bytes)
         dw 0x0          ; Base address Bits 15-0
         db 0x0          ; Base address Bits 23-16
-        db 10011010     ; Bit 8:     A (Accessed) = 0
+        db 10011010b    ; Bit 8:     A (Accessed) = 0
                         ; Bit 9:     Readable = 1
                         ; Bit 10:    Conforming = 0
                         ; Bit 11:    Code = 1
                         ; Bit 12:    S (Segment Type) = 1 
                         ; Bit 14-13: DPL (Descriptor Privilege Level) = 00 (Highest privilege)
                         ; Bit 15:    P (Present flag) = 1 (segment present)
-        db  11001111    ; Segment limiter (Bits 19-16)
+        db  11001111b   ; Segment limiter (Bits 19-16)
                         ; Bit 20     AVL (Available to System Programmers) = 0
                         ; Bit 21:    Reserved bit = 0 
                         ; Bit 22:    D/B = 1  
@@ -32,14 +32,14 @@ gdt_start:
         dw 0xffff       ; Segment limiter Bits 15-0 
         dw 0x0          ; Base address Bits 15-0
         db 0x0          ; Base address Bits 23-16
-        db 10010010     ; Bit 8:     A (Accessed) = 0
+        db 10010010b    ; Bit 8:     A (Accessed) = 0
                         ; Bit 9:     Writable  = 1 (Read only)
                         ; Bit 10:    Direction = 0 (expand down segment)
                         ; Bit 11:    Code = 0 (Data segment)
                         ; Bit 12:    S (Segment Type) = 1 
                         ; Bit 14-13: DPL (Descriptor Privilege Level) = 00 (Highest priviege)
                         ; Bit 15:    P (Present flag) = 1 (segment present)
-        db  11001111    ; Segment limiter Bits 19-16
+        db  11001111b   ; Segment limiter Bits 19-16
                         ; Bit 20     AVL (Available to System Programmers) = 0
                         ; Bit 21:    Reserved bit = 0 
                         ; Bit 22:    D/B = 1  
